@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="es-AR" data-theme="roble">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barbería Diego | Tradición de Barrio, Tijera &amp; Navaja</title>
+  <meta name="description" content="Barbería de barrio especializada en cortes clásicos a tijera, degradé sobrio y arreglo de barba con toalla caliente para caballeros de 30 a 60 años." />
+  <!-- Maqueta para mostrarle a Diego: que no la indexen los buscadores -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Google Fonts para las 4 propuestas estéticas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-hero-layout="split" data-alias-mode="dual">
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-emblem">
+      <svg class="preloader-Scissors" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="6" cy="6" r="3"></circle>
+        <circle cx="6" cy="18" r="3"></circle>
+        <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+        <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+        <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+      </svg>
+    </div>
+    <div class="preloader-title">Barbería Diego</div>
+    <div class="preloader-sub">Oficio de Barrio · Desde 2012</div>
+  </div>
+
+  <!-- CURSOR MAGNÉTICO -->
+  <div class="custom-cursor" id="customCursor"></div>
+
+  <!-- TOPBAR: ESTADO DEL LOCAL Y DATOS RÁPIDOS -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span class="status-pill" id="liveStatusBadge">
+          <span class="status-dot"></span>
+          <span id="liveStatusText">Abierto ahora · Martes a Sábado 9:30 a 20:00 hs</span>
+        </span>
+        <span class="topbar-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Av. del Barrio 1480 · <strong>A pasos de la plaza</strong></span>
+        </span>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          <span>Cobramos en el local con <strong>Alias (0% comisión)</strong> y <strong>QR Mercado Pago</strong></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#inicio" class="brand">
+        <div class="barber-pole-mini" aria-hidden="true"></div>
+        <div class="brand-text">
+          <span class="brand-name">BARBERÍA DIEGO</span>
+          <span class="brand-tagline">Tijera · Navaja · Barrio</span>
+        </div>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#experiencia" class="active">El Lugar</a></li>
+          <li><a href="#cortes">Cortes (30–60)</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#barberos">Barberos y Alias</a></li>
+          <li><a href="#turnos">Turnos</a></li>
+          <li><a href="#ubicacion">Mapa</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#turnos" class="btn btn-primary btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Reservar Turno</span>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Abrir menú">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO PRINCIPAL -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-content reveal is-visible">
+        <div class="hero-eyebrow">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/></svg>
+          <span>Peluquería &amp; Barbería Tradicional de Barrio</span>
+        </div>
+
+        <h1 class="hero-title">
+          Donde el buen corte se hace <span class="highlight">sin apuro, a tijera y entre amigos.</span>
+        </h1>
+
+        <p class="hero-lead">
+          Pensada para el hombre de <strong>30 a 60 años</strong> que busca verse impecable sin caer en modas pasajeras. Cortes clásicos a peine y tijera, degradés sobrios, perfilado de barba con toalla caliente y un café expreso esperando tu turno.
+        </p>
+
+        <div class="hero-badges">
+          <span class="feature-chip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Especialistas en 30 a 60 años
+          </span>
+          <span class="feature-chip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Toalla caliente &amp; navaja tradicional
+          </span>
+          <span class="feature-chip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Café expreso de cortesía
+          </span>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#turnos" class="btn btn-primary">
+            <span>Pedir Turno Ahora</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#cortes" class="btn btn-outline">
+            <span>Ver Catálogo de Cortes</span>
+          </a>
+        </div>
+
+        <div class="hero-trust-strip">
+          <div class="trust-metric">
+            <span class="trust-number">14+</span>
+            <span class="trust-label">Años en el barrio</span>
+          </div>
+          <div class="trust-metric">
+            <span class="trust-number">4.9 ★</span>
+            <span class="trust-label">Calificación en Google Maps</span>
+          </div>
+          <div class="trust-metric">
+            <span class="trust-number">40 min</span>
+            <span class="trust-label">Dedicados a cada turno</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TARJETA VISUAL INTERACTIVA (3D TILT) -->
+      <div class="hero-visual-card reveal is-visible">
+        <div class="hero-showcase" id="heroTiltCard">
+          <div class="hero-floating-mp">
+            <div class="badge-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700;">Pago en el Local</div>
+              <div style="font-size: 0.86rem; font-weight: 600;">Alias Directo &amp; QR Mercado Pago</div>
+            </div>
+          </div>
+
+          <div class="hero-showcase-img-wrap">
+            <img src="https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&w=1000&q=85" alt="Diego trabajando en un corte clásico de caballero" />
+          </div>
+
+          <div class="hero-floating-badge">
+            <div class="badge-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 0.92rem;">Atención por Turno y al Paso</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary);">Sin esperas eternas · Estacionamiento fácil en la cuadra</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUESINA DE OFICIO -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">✦ Corte Clásico a Tijera</span>
+      <span class="marquee-item">✦ Degradé Sobrio &amp; Ejecutivo</span>
+      <span class="marquee-item">✦ Ritual de Barba con Toalla Caliente</span>
+      <span class="marquee-item">✦ Afeitado Tradicional a Navaja</span>
+      <span class="marquee-item">✦ Disimulo Natural de Canas</span>
+      <span class="marquee-item">✦ Café Expreso de Cortesía</span>
+      <span class="marquee-item">✦ Pago con Alias o QR en el Local</span>
+      <!-- Duplicado para loop infinito -->
+      <span class="marquee-item">✦ Corte Clásico a Tijera</span>
+      <span class="marquee-item">✦ Degradé Sobrio &amp; Ejecutivo</span>
+      <span class="marquee-item">✦ Ritual de Barba con Toalla Caliente</span>
+      <span class="marquee-item">✦ Afeitado Tradicional a Navaja</span>
+      <span class="marquee-item">✦ Disimulo Natural de Canas</span>
+      <span class="marquee-item">✦ Café Expreso de Cortesía</span>
+      <span class="marquee-item">✦ Pago con Alias o QR en el Local</span>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 1: EL ESPACIO Y LA FILOSOFÍA (30 A 60 AÑOS) -->
+  <section class="section" id="experiencia">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-kicker">La diferencia de una barbería de verdad</span>
+        <h2 class="section-title">Pensada para los que ya sabemos lo que nos queda bien</h2>
+        <p class="section-subtitle">
+          A los 30, 40, 50 o 60 años no querés entrar a un boliche con música aturdidora para cortarte el pelo. Querés un lugar prolijo, buena charla de barrio y un barbero que entienda tu pelo y tus remolinos.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <article class="pillar-card reveal">
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+          </div>
+          <h3 class="pillar-title">Dominio de Tijera y Peine</h3>
+          <p class="pillar-desc">
+            No todo se resuelve pasando la máquina al ras. Trabajamos el volumen superior a tijera para que el corte crezca parejo y siga peinando bien a las 3 semanas.
+          </p>
+        </article>
+
+        <article class="pillar-card reveal">
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="pillar-title">Ritual de Toalla Caliente</h3>
+          <p class="pillar-desc">
+            Abrimos los poros con toalla caliente aromatizada con eucalipto, espuma tibia de brocha, filo nuevo descartable en cada cliente y loción post-afeitado.
+          </p>
+        </article>
+
+        <article class="pillar-card reveal">
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h3 class="pillar-title">Ambiente Tranquilo y Café</h3>
+          <p class="pillar-desc">
+            Rock nacional o jazz suave a volumen de charla, sillones amplios y un café expreso recién tirado (o agua fría/aperitivo los viernes a la tarde) sin cargo.
+          </p>
+        </article>
+
+        <article class="pillar-card reveal">
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="pillar-title">Respeto por tu Horario</h3>
+          <p class="pillar-desc">
+            Sabemos que venís entre el trabajo y la familia. Reservás tu turno en dos toques y te sentás en el sillón a la hora pactada.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: CATÁLOGO DE CORTES (30 A 60 AÑOS) -->
+  <section class="section section-alt" id="cortes">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-kicker">Especialidades de la Casa</span>
+        <h2 class="section-title">Estilos pensados para hombres de 30 a 60 años</h2>
+        <p class="section-subtitle">
+          Elegí el estilo que mejor va con tu rostro, tipo de pelo o barba. Al tocar <strong>"Pedir este corte"</strong> se carga directo en tu reserva.
+        </p>
+      </div>
+
+      <!-- Filtros Interactivos -->
+      <div class="filter-tabs reveal" id="styleFilters">
+        <button class="filter-btn is-active" data-filter="all">Todos los estilos (6)</button>
+        <button class="filter-btn" data-filter="tijera">Clásicos a Tijera</button>
+        <button class="filter-btn" data-filter="degrade">Degradé Sobrio</button>
+        <button class="filter-btn" data-filter="barba">Barba &amp; Navaja</button>
+        <button class="filter-btn" data-filter="canas">Canas &amp; Familia</button>
+      </div>
+
+      <!-- Grilla de Cortes -->
+      <div class="styles-grid" id="stylesGrid">
+        <!-- Corte 1 -->
+        <article class="style-card reveal" data-category="tijera">
+          <div class="style-img-box">
+            <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=900&q=85" alt="Corte Clásico íntegramente a Tijera" loading="lazy" />
+            <span class="style-age-tag">Muy elegido · 40 a 60 años</span>
+            <span class="style-duration-tag">40 min</span>
+          </div>
+          <div class="style-body">
+            <h3 class="style-title">Clásico íntegramente a Tijera</h3>
+            <p class="style-desc">
+              Laterales trabajados a peine y tijera sin dejar el cuero cabelludo blanco. Terminación limpia en nuca y patillas a navaja.
+            </p>
+            <div class="style-recommendation">
+              <strong>Ideal para:</strong> Pelo lacio u ondulado, remolinos rebeldes o quienes buscan un look natural que no parezca recién rapado.
+            </div>
+            <div class="style-footer">
+              <span class="style-price">$14.000</span>
+              <button class="btn btn-primary btn-sm select-service-btn" data-service="Clásico íntegramente a Tijera" data-price="$14.000">
+                Pedir este corte
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Corte 2 -->
+        <article class="style-card reveal" data-category="degrade">
+          <div class="style-img-box">
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=85" alt="Degradé Ejecutivo Bajo (Low Taper)" loading="lazy" />
+            <span class="style-age-tag">Muy elegido · 30 a 48 años</span>
+            <span class="style-duration-tag">40 min</span>
+          </div>
+          <div class="style-body">
+            <h3 class="style-title">Degradé Ejecutivo (Low Fade Sobrio)</h3>
+            <p class="style-desc">
+              Desvanecido bajo y sutil alrededor de la oreja y nuca, conservando estructura oscura en los laterales y largo cómodo arriba.
+            </p>
+            <div class="style-recommendation">
+              <strong>Ideal para:</strong> Oficina, profesionales y quienes quieren la prolijidad del degradé pero con sobriedad y elegancia.
+            </div>
+            <div class="style-footer">
+              <span class="style-price">$14.000</span>
+              <button class="btn btn-primary btn-sm select-service-btn" data-service="Degradé Ejecutivo Sobrio" data-price="$14.000">
+                Pedir este corte
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Corte 3 -->
+        <article class="style-card reveal" data-category="barba">
+          <div class="style-img-box">
+            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=85" alt="Combo Corte + Barba con Toalla Caliente" loading="lazy" />
+            <span class="style-age-tag">El favorito · 30 a 60 años</span>
+            <span class="style-duration-tag">60 min</span>
+          </div>
+          <div class="style-body">
+            <h3 class="style-title">El Completo: Corte + Barba a Navaja</h3>
+            <p class="style-desc">
+              Corte a medida (tijera o degradé) + esculpido de barba, rebaje de volumen en canas rebeldes, toalla caliente con eucalipto y nutrición con aceite de argán.
+            </p>
+            <div class="style-recommendation">
+              <strong>Ideal para:</strong> Salir renovado de pies a cabeza. Incluye lavado capilar y café expreso o bebida de cortesía.
+            </div>
+            <div class="style-footer">
+              <span class="style-price">$20.000</span>
+              <button class="btn btn-primary btn-sm select-service-btn" data-service="El Completo (Corte + Barba con Toalla Caliente)" data-price="$20.000">
+                Pedir este corte
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Corte 4 -->
+        <article class="style-card reveal" data-category="barba">
+          <div class="style-img-box">
+            <img src="https://images.unsplash.com/photo-1593702288056-7927b442d0fa?auto=format&fit=crop&w=900&q=85" alt="Perfilado de Barba Entrecana y Toalla Caliente" loading="lazy" />
+            <span class="style-age-tag">Barba &amp; Bigote · 35 a 60 años</span>
+            <span class="style-duration-tag">30 min</span>
+          </div>
+          <div class="style-body">
+            <h3 class="style-title">Ritual de Barba &amp; Toalla Caliente</h3>
+            <p class="style-desc">
+              Alineado anatómico en pómulos y cuello sin líneas artificiales. Doma de pelos duros o entrecanos con fomento de vapor y bálsamo.
+            </p>
+            <div class="style-recommendation">
+              <strong>Ideal para:</strong> Barbas de 3 días o barbas tupidas que necesitan forma prolija sin perder naturalidad.
+            </div>
+            <div class="style-footer">
+              <span class="style-price">$9.500</span>
+              <button class="btn btn-primary btn-sm select-service-btn" data-service="Ritual de Barba & Toalla Caliente" data-price="$9.500">
+                Pedir este servicio
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Corte 5 -->
+        <article class="style-card reveal" data-category="canas">
+          <div class="style-img-box">
+            <img src="https://images.unsplash.com/photo-1532710093739-9470acff878f?auto=format&fit=crop&w=900&q=85" alt="Corte para Entradas y Camuflaje Sutil de Canas" loading="lazy" />
+            <span class="style-age-tag">Especial · 42 a 60 años</span>
+            <span class="style-duration-tag">50 min</span>
+          </div>
+          <div class="style-body">
+            <h3 class="style-title">Corte Estructurado + Matizado de Canas</h3>
+            <p class="style-desc">
+              Diseño de corte que favorece entradas o menor densidad en coronilla, acompañado de un matizador en 5 minutos que apaga el amarillento o reduce canas un 40% sin efecto tintura.
+            </p>
+            <div class="style-recommendation">
+              <strong>Ideal para:</strong> Quitarse 5 años de encima de manera 100% discreta y sin raíz marcada al crecer.
+            </div>
+            <div class="style-footer">
+              <span class="style-price">$22.000</span>
+              <button class="btn btn-primary btn-sm select-service-btn" data-service="Corte + Matizado Natural de Canas" data-price="$22.000">
+                Pedir este corte
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Corte 6 -->
+        <article class="style-card reveal" data-category="canas">
+          <div class="style-img-box">
+            <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=900&q=85" alt="Combo Padre e Hijo en la barbería" loading="lazy" />
+            <span class="style-age-tag">Tradición de Barrio</span>
+            <span class="style-duration-tag">60 min</span>
+          </div>
+          <div class="style-body">
+            <h3 class="style-title">Combo Padre e Hijo</h3>
+            <p class="style-desc">
+              Dos turnos consecutivos o en simultáneo con nuestros dos barberos para compartir la costumbre del barrio en familia.
+            </p>
+            <div class="style-recommendation">
+              <strong>Ideal para:</strong> Venir los sábados o después del colegio/trabajo con precio bonificado por ambos cortes.
+            </div>
+            <div class="style-footer">
+              <span class="style-price">$24.000</span>
+              <button class="btn btn-primary btn-sm select-service-btn" data-service="Combo Padre e Hijo (2 Cortes)" data-price="$24.000">
+                Pedir este combo
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: PIZARRA DE PRECIOS + COMPARADOR ANTES Y DESPUÉS -->
+  <section class="section" id="precios">
+    <div class="container">
+      <div class="split-showcase">
+        <!-- Pizarra tradicional -->
+        <div class="price-board reveal">
+          <div>
+            <span class="section-kicker">Valores Claros y Sin Sorpresas</span>
+            <h2 class="section-title" style="font-size: 2.2rem;">Pizarra de Precios del Local</h2>
+            <p style="color: var(--text-secondary); font-size: 0.94rem;">
+              Tocá cualquier servicio para preseleccionarlo en la reserva. Mantenemos el mismo precio pagando en <strong>Efectivo o Transferencia al Alias</strong>.
+            </p>
+
+            <div class="price-list">
+              <div class="price-row select-service-btn" data-service="Clásico íntegramente a Tijera" data-price="$14.000">
+                <div class="price-row-top">
+                  <span class="price-name">Corte de Caballero (Tijera o Degradé)</span>
+                  <span class="price-dots"></span>
+                  <span class="price-amount">$14.000</span>
+                </div>
+                <div class="price-detail">Incluye perfilado de nuca y cejas a navaja + lavado opcional + café.</div>
+              </div>
+
+              <div class="price-row select-service-btn" data-service="El Completo (Corte + Barba con Toalla Caliente)" data-price="$20.000">
+                <div class="price-row-top">
+                  <span class="price-name">El Completo (Corte + Barba &amp; Toalla Caliente)</span>
+                  <span class="price-dots"></span>
+                  <span class="price-amount">$20.000</span>
+                </div>
+                <div class="price-detail">Nuestro servicio insignia de 60 minutos. Salís impecable.</div>
+              </div>
+
+              <div class="price-row select-service-btn" data-service="Ritual de Barba & Toalla Caliente" data-price="$9.500">
+                <div class="price-row-top">
+                  <span class="price-name">Ritual de Barba a Navaja &amp; Vapor</span>
+                  <span class="price-dots"></span>
+                  <span class="price-amount">$9.500</span>
+                </div>
+                <div class="price-detail">Recorte a tijera/máquina, fomento caliente, navaja y aceite nutritivo.</div>
+              </div>
+
+              <div class="price-row select-service-btn" data-service="Corte + Matizado Natural de Canas" data-price="$22.000">
+                <div class="price-row-top">
+                  <span class="price-name">Corte + Camuflaje Sutil de Canas</span>
+                  <span class="price-dots"></span>
+                  <span class="price-amount">$22.000</span>
+                </div>
+                <div class="price-detail">Tonalizado natural en lavacabezas que atenúa canas sin efecto artificial.</div>
+              </div>
+
+              <div class="price-row select-service-btn" data-service="Combo Padre e Hijo (2 Cortes)" data-price="$24.000">
+                <div class="price-row-top">
+                  <span class="price-name">Combo Padre e Hijo (2 Cortes)</span>
+                  <span class="price-dots"></span>
+                  <span class="price-amount">$24.000</span>
+                </div>
+                <div class="price-detail">Valor promocional reservando ambos turnos juntos.</div>
+              </div>
+
+              <div class="price-row select-service-btn" data-service="Corte Jubilados / +60 (Martes a Jueves)" data-price="$11.000">
+                <div class="price-row-top">
+                  <span class="price-name">Precio Vecino Vitalicio (+60 años · Mar a Jue)</span>
+                  <span class="price-dots"></span>
+                  <span class="price-amount">$11.000</span>
+                </div>
+                <div class="price-detail">De martes a jueves de 9:30 a 14:00 hs para nuestros clientes históricos.</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-secondary); padding: 1rem 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+            <span style="font-size: 0.86rem; color: var(--text-secondary);">¿Querés consultar por un corte específico?</span>
+            <a href="#turnos" class="btn btn-primary btn-sm">Ir a Reservar Turno</a>
+          </div>
+        </div>
+
+        <!-- Comparador Interactivo Antes / Después -->
+        <div class="before-after-card reveal">
+          <div style="margin-bottom: 1rem;">
+            <span class="section-kicker">Precisión en los Detalles</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.85rem; margin-bottom: 0.35rem;">Deslizá para ver la terminación</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+              Arrastrá el control central de izquierda a derecha: mirá cómo cambia la estructura de la barba y los contornos limpios sin perder naturalidad.
+            </p>
+          </div>
+
+          <div class="ba-slider" id="baSlider">
+            <!-- Imagen Después (Fondo completo a color) -->
+            <img class="ba-img" src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1000&q=85" alt="Después del corte y perfilado" />
+            <!-- Imagen Antes (Recortada dinámicamente) -->
+            <div class="ba-before-wrap" id="baBeforeWrap">
+              <img src="https://images.unsplash.com/photo-1519500528352-2d1460418d41?auto=format&fit=crop&w=1000&q=85" alt="Durante la preparación del corte" id="baBeforeImg" />
+            </div>
+            <!-- Divisor -->
+            <div class="ba-handle" id="baHandle">
+              <div class="ba-handle-circle">↔</div>
+            </div>
+            <span class="ba-label ba-label-left">En Proceso</span>
+            <span class="ba-label ba-label-right">Terminación Diego</span>
+          </div>
+
+          <div style="margin-top: 1.1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.83rem; color: var(--text-secondary);">
+            <span>✓ Filos Gillette Platinum descartables en cada turno</span>
+            <span style="color: var(--accent); font-weight: 700;">100% Higiene Garantizada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: LOS BARBEROS Y SUS ALIASES DE PAGO (SOLUCIÓN A LOS 2 ALIASES) -->
+  <section class="section section-alt" id="barberos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-kicker">Quiénes te atienden</span>
+        <h2 class="section-title">Nuestros Barberos &amp; Pago Directo en el Local</h2>
+        <p class="section-subtitle">
+          Podés abonar escaneando el <strong>QR del local de Mercado Pago</strong> (que te sugiere la app al estar acá) o transfiriendo sin comisión directamente al <strong>Alias de tu barbero</strong> con un solo toque.
+        </p>
+      </div>
+
+      <div class="barbers-grid">
+        <!-- Barbero 1: Diego -->
+        <article class="barber-card reveal">
+          <div class="barber-avatar-wrap">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85" alt="Diego - Maestro Barbero Fundador" loading="lazy" />
+            <span class="barber-exp-badge">18 años de oficio</span>
+          </div>
+          <div>
+            <span class="barber-role">Fundador · Sillón 1</span>
+            <h3 class="barber-name">Diego</h3>
+            <p class="barber-bio">
+              Especialista en cortes clásicos íntegramente a tijera, cabellos con remolinos difíciles y arreglo de barba tradicional para hombres de 35 a 60 años.
+            </p>
+
+            <!-- Caja de Alias Interactiva -->
+            <div class="alias-box">
+              <div class="alias-meta">
+                <span class="alias-label">Alias Mercado Pago / Transferencia (Diego)</span>
+                <span class="alias-value" id="aliasDiegoText">barberia.diego.mp</span>
+              </div>
+              <button class="copy-alias-btn" data-copy-alias="barberia.diego.mp" data-owner="Diego">
+                Copiar Alias
+              </button>
+            </div>
+
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <button class="btn btn-primary btn-sm select-barber-btn" data-barber="Diego (Sillón 1)" data-alias="barberia.diego.mp">
+                Reservar con Diego
+              </button>
+              <span style="font-size: 0.8rem; color: var(--text-muted); align-self: center;">Martes a Sábado · 9:30 a 20:00</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Barbero 2: Martín -->
+        <article class="barber-card reveal" id="secondBarberCard">
+          <div class="barber-avatar-wrap">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=85" alt="Martín - Barbero Especialista en Degradé Sobrio y Navaja" loading="lazy" />
+            <span class="barber-exp-badge">11 años de oficio</span>
+          </div>
+          <div>
+            <span class="barber-role">Maestro de Navaja · Sillón 2</span>
+            <h3 class="barber-name">Martín</h3>
+            <p class="barber-bio">
+              Experto en degradés ejecutivos bajos (Low Fade), perfilado de barbas tupidas con toalla caliente y camuflaje natural de canas.
+            </p>
+
+            <!-- Caja de Alias Interactiva (Cambia según modo 2 aliases o 1 alias único) -->
+            <div class="alias-box">
+              <div class="alias-meta">
+                <span class="alias-label" id="aliasMartinLabel">Alias Mercado Pago / Transferencia (Martín)</span>
+                <span class="alias-value" id="aliasMartinText">martin.barbero.mp</span>
+              </div>
+              <button class="copy-alias-btn" id="copyMartinBtn" data-copy-alias="martin.barbero.mp" data-owner="Martín">
+                Copiar Alias
+              </button>
+            </div>
+
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <button class="btn btn-primary btn-sm select-barber-btn" id="bookMartinBtn" data-barber="Martín (Sillón 2)" data-alias="martin.barbero.mp">
+                Reservar con Martín
+              </button>
+              <span style="font-size: 0.8rem; color: var(--text-muted); align-self: center;">Martes a Sábado · 10:00 a 20:00</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: RESERVA DE TURNOS INTERACTIVA + RESUMEN DE PAGO -->
+  <section class="section" id="turnos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-kicker">Sin bajar aplicaciones ni registrarte</span>
+        <h2 class="section-title">Reservá tu Turno en 30 Segundos</h2>
+        <p class="section-subtitle">
+          Elegí servicio, barbero y horario. Tu turno se confirma al instante por WhatsApp y ya te queda a mano el alias del barbero para cuando termines de cortarte.
+        </p>
+      </div>
+
+      <div class="booking-wrapper reveal">
+        <!-- Columna Izquierda: Configurador -->
+        <div class="booking-form-col">
+          <!-- Paso 1: Servicio -->
+          <div class="booking-step-group">
+            <label class="booking-label" for="bookingServiceSelect">1. ¿Qué te vas a hacer hoy?</label>
+            <select id="bookingServiceSelect" class="input-field">
+              <option value="El Completo (Corte + Barba con Toalla Caliente)|$20.000">El Completo: Corte + Barba con Toalla Caliente ($20.000)</option>
+              <option value="Clásico íntegramente a Tijera|$14.000">Clásico íntegramente a Tijera ($14.000)</option>
+              <option value="Degradé Ejecutivo Sobrio|$14.000">Degradé Ejecutivo Sobrio ($14.000)</option>
+              <option value="Ritual de Barba & Toalla Caliente|$9.500">Ritual de Barba &amp; Toalla Caliente ($9.500)</option>
+              <option value="Corte + Matizado Natural de Canas|$22.000">Corte + Matizado Natural de Canas ($22.000)</option>
+              <option value="Combo Padre e Hijo (2 Cortes)|$24.000">Combo Padre e Hijo - 2 Cortes ($24.000)</option>
+              <option value="Corte Jubilados / +60 (Martes a Jueves)|$11.000">Precio Vecino +60 años - Mar a Jue ($11.000)</option>
+            </select>
+          </div>
+
+          <!-- Paso 2: Barbero -->
+          <div class="booking-step-group">
+            <span class="booking-label">2. Elegí con qué barbero te cortás</span>
+            <div class="booking-options-grid" id="barberChoices">
+              <button type="button" class="choice-pill is-selected" data-barber="Diego (Sillón 1)" data-alias="barberia.diego.mp">
+                <div>
+                  <div style="font-weight: 700;">Diego (Sillón 1)</div>
+                  <div style="font-size: 0.76rem; color: var(--text-secondary);">Alias: barberia.diego.mp</div>
+                </div>
+                <span style="color: var(--accent); font-weight: 700;">✓</span>
+              </button>
+
+              <button type="button" class="choice-pill" id="martinChoicePill" data-barber="Martín (Sillón 2)" data-alias="martin.barbero.mp">
+                <div>
+                  <div style="font-weight: 700;">Martín (Sillón 2)</div>
+                  <div style="font-size: 0.76rem; color: var(--text-secondary);" id="martinChoiceAliasSub">Alias: martin.barbero.mp</div>
+                </div>
+                <span style="color: var(--accent); font-weight: 700;">✓</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Paso 3: Día y Hora -->
+          <div class="booking-step-group">
+            <label class="booking-label" for="bookingDaySelect">3. Elegí el día y horario disponible</label>
+            <select id="bookingDaySelect" class="input-field" style="margin-bottom: 0.75rem;">
+              <option value="Hoy">Hoy (Turnos de tarde disponibles)</option>
+              <option value="Mañana">Mañana</option>
+              <option value="Jueves">Este Jueves</option>
+              <option value="Viernes">Este Viernes</option>
+              <option value="Sábado">Este Sábado</option>
+            </select>
+
+            <div class="time-slots-grid" id="timeSlotsGrid">
+              <button type="button" class="time-slot" data-time="10:00 hs">10:00</button>
+              <button type="button" class="time-slot" data-time="11:00 hs">11:00</button>
+              <button type="button" class="time-slot" data-time="12:00 hs">12:00</button>
+              <button type="button" class="time-slot" data-time="15:00 hs">15:00</button>
+              <button type="button" class="time-slot is-selected" data-time="16:30 hs">16:30</button>
+              <button type="button" class="time-slot" data-time="17:30 hs">17:30</button>
+              <button type="button" class="time-slot" data-time="18:30 hs">18:30</button>
+              <button type="button" class="time-slot" data-time="19:15 hs">19:15</button>
+            </div>
+          </div>
+
+          <!-- Paso 4: Nombre del cliente -->
+          <div class="booking-step-group" style="margin-bottom: 0;">
+            <label class="booking-label" for="clientNameInput">4. Tu Nombre</label>
+            <input type="text" id="clientNameInput" class="input-field" placeholder="Ej: Gustavo / Carlos / Alejandro" />
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Ticket de Turno y Pago en el Local -->
+        <div class="booking-summary-ticket">
+          <div>
+            <div class="ticket-header">
+              <span style="font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); font-weight: 700;">Ficha de Turno · Barbería Diego</span>
+              <h3 style="font-family: var(--font-heading); font-size: 1.75rem; margin-top: 0.2rem;">Resumen de tu Reserva</h3>
+            </div>
+
+            <div class="ticket-row">
+              <span>Servicio elegido:</span>
+              <strong id="summaryService">El Completo (Corte + Barba con Toalla Caliente)</strong>
+            </div>
+            <div class="ticket-row">
+              <span>Barbero asignado:</span>
+              <strong id="summaryBarber">Diego (Sillón 1)</strong>
+            </div>
+            <div class="ticket-row">
+              <span>Día y horario:</span>
+              <strong id="summaryDateTime">Hoy a las 16:30 hs</strong>
+            </div>
+            <div class="ticket-row" style="border-top: 1px solid var(--border-color); padding-top: 0.75rem; margin-top: 0.75rem;">
+              <span style="font-weight: 700; color: var(--text-primary);">Total a abonar en el local:</span>
+              <strong id="summaryPrice" style="font-family: var(--font-heading); font-size: 1.65rem; color: var(--accent);">$20.000</strong>
+            </div>
+
+            <!-- Información inteligente de Alias según el barbero -->
+            <div class="ticket-payment-box">
+              <div style="font-size: 0.78rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">
+                💳 ¿Cómo pagás en la barbería?
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.65rem;">
+                No te pedimos tarjeta por adelantado. Abonás al terminar tu corte con <strong>Efectivo</strong>, con el <strong>QR del local de Mercado Pago</strong> o transfiriendo al alias de tu barbero:
+              </p>
+              <div style="display: flex; align-items: center; justify-content: space-between; background: var(--bg-secondary); padding: 0.55rem 0.8rem; border-radius: var(--radius-sm); border: 1px dashed var(--accent);">
+                <div>
+                  <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Alias directo del barbero seleccionado:</span>
+                  <strong id="summaryAlias" style="font-family: monospace; color: var(--accent); font-size: 0.95rem;">barberia.diego.mp</strong>
+                </div>
+                <button type="button" class="copy-alias-btn" id="summaryCopyAliasBtn" data-copy-alias="barberia.diego.mp" data-owner="Diego">
+                  Copiar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" id="confirmWhatsappBtn" style="width: 100%; justify-content: center; padding: 1rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span>Confirmar Turno por WhatsApp</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6: RESEÑAS REALES DE VECINOS (30 A 60 AÑOS) -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-kicker">4.9 Estrellas en Google Maps</span>
+        <h2 class="section-title">La palabra de los clientes del barrio</h2>
+      </div>
+
+      <div class="reviews-grid">
+        <article class="review-card reveal">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">
+              “Tengo 48 años y me cansé de las barberías donde te pasan la máquina en 10 minutos con reggaetón al mango. Lo de Diego es otra cosa: usa la tijera como los peluqueros de antes, te ofrece un café y salís impecable.”
+            </p>
+          </div>
+          <div class="review-author">
+            <div>
+              <strong>Hernán G. (48 años)</strong>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Cliente hace 6 años · Corte a tijera</div>
+            </div>
+            <span style="font-size: 0.75rem; color: var(--accent); font-weight: 700;">Google Maps</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">
+              “El arreglo de barba con toalla caliente de Martín es espectacular. Tengo barba entrecana bastante dura y es el único lugar del barrio donde me la dejan prolija sin que parezca dibujada con regla.”
+            </p>
+          </div>
+          <div class="review-author">
+            <div>
+              <strong>Marcelo R. (54 años)</strong>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Vecino del barrio · Corte + Barba</div>
+            </div>
+            <span style="font-size: 0.75rem; color: var(--accent); font-weight: 700;">Google Maps</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">
+              “Voy con mi hijo de 10 años cada tres semanas. Puntuales con los turnos, el lugar impecable y podés pagar en dos segundos con el alias o con el QR del mostrador.”
+            </p>
+          </div>
+          <div class="review-author">
+            <div>
+              <strong>Sebastián L. (37 años)</strong>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Combo Padre e Hijo</div>
+            </div>
+            <span style="font-size: 0.75rem; color: var(--accent); font-weight: 700;">Google Maps</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 7: UBICACIÓN EN GOOGLE MAPS & HORARIOS -->
+  <section class="section" id="ubicacion">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-info-card reveal">
+          <span class="section-kicker">Dónde estamos</span>
+          <h2 class="section-title" style="font-size: 2.2rem;">Pasá por la Barbería</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 1.25rem;">
+            Ya figuramos en <strong>Google Maps</strong> y con <strong>Local y Caja en Mercado Pago</strong> para que nos encuentres rápido desde el celular.
+          </p>
+
+          <table class="schedule-table" aria-label="Horarios de atención">
+            <tbody>
+              <tr>
+                <td>Martes a Viernes</td>
+                <td>09:30 a 20:00 hs (Corrido)</td>
+              </tr>
+              <tr>
+                <td>Sábados</td>
+                <td>09:00 a 19:30 hs</td>
+              </tr>
+              <tr>
+                <td>Domingos y Lunes</td>
+                <td style="color: var(--text-muted);">Cerrado por descanso</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-top: 1.5rem;">
+            <div style="font-size: 0.92rem;">
+              📍 <strong>Dirección:</strong> Av. del Barrio 1480 (Fácil estacionamiento en la cuadra)
+            </div>
+            <div style="font-size: 0.92rem;">
+              📱 <strong>WhatsApp Turnos:</strong> a definir
+            </div>
+          </div>
+
+          <div style="margin-top: 1.6rem; display: flex; gap: 0.85rem; flex-wrap: wrap;">
+            <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              Abrir en Google Maps
+            </a>
+            <a href="#turnos" class="btn btn-outline btn-sm">
+              Reservar un horario
+            </a>
+          </div>
+        </div>
+
+        <div class="map-frame-wrap reveal">
+          <iframe
+            title="Ubicación de Barbería Diego en Google Maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26269.04877770877!2d-58.4596!3d-34.6037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+        <div class="brand">
+          <div class="barber-pole-mini" aria-hidden="true"></div>
+          <div class="brand-text">
+            <span class="brand-name">BARBERÍA DIEGO</span>
+            <span class="brand-tagline">Cortes de Caballero · 30 a 60 años</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="#cortes" class="btn btn-outline btn-sm">Catálogo de Cortes</a>
+          <a href="#barberos" class="btn btn-outline btn-sm">Ver Aliases de Pago</a>
+          <a href="#turnos" class="btn btn-primary btn-sm">Reservar Turno</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Barbería Diego · Tradición de Barrio. Todos los derechos reservados.</span>
+        <span id="activeThemeFooterIndicator" style="color: var(--accent); font-weight: 600;">
+          Propuesta Activa: 1 · Roble &amp; Bronce
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       PANEL INTERACTIVO DE PROPUESTAS DE DISEÑO (PARA MOSTRARLE AL CLIENTE)
+       ======================================================================== -->
+  <aside class="design-studio-dock" id="designStudioDock" aria-label="Selector de diseños para mostrar al cliente">
+    <div class="studio-header" id="studioHeaderToggle">
+      <span class="studio-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+        <span>Muestrario de Diseños (4 en 1)</span>
+      </span>
+      <button type="button" class="studio-toggle-btn" id="studioMinimizeBtn" title="Minimizar / Expandir panel">−</button>
+    </div>
+
+    <div class="studio-body">
+      <span class="studio-label">1. Elegí el estilo visual para mostrarle a Diego:</span>
+      <div class="studio-themes-grid">
+        <button type="button" class="theme-Preset-btn is-active" data-set-theme="roble" data-theme-label="1 · Roble & Bronce (Clásico Señorial)">
+          <span class="swatch-dot" style="background: linear-gradient(135deg, #0f0d0b 50%, #c89d54 50%);"></span>
+          <span>1. Roble &amp; Bronce</span>
+        </button>
+
+        <button type="button" class="theme-Preset-btn" data-set-theme="barrio" data-theme-label="2 · Oficio de Barrio (Claro & Verde Inglés)">
+          <span class="swatch-dot" style="background: linear-gradient(135deg, #f5f0e6 50%, #1b4332 50%);"></span>
+          <span>2. Papel &amp; Verde</span>
+        </button>
+
+        <button type="button" class="theme-Preset-btn" data-set-theme="acero" data-theme-label="3 · Acero & Borgoña (Ejecutivo Moderno)">
+          <span class="swatch-dot" style="background: linear-gradient(135deg, #0b0f17 50%, #c83e4d 50%);"></span>
+          <span>3. Acero &amp; Borgoña</span>
+        </button>
+
+        <button type="button" class="theme-Preset-btn" data-set-theme="esquina" data-theme-label="4 · Esquina Porteña (Cuero & Ámbar)">
+          <span class="swatch-dot" style="background: linear-gradient(135deg, #16100c 50%, #df7a26 50%);"></span>
+          <span>4. Cuero &amp; Whisky</span>
+        </button>
+      </div>
+
+      <span class="studio-label">2. Disposición de Portada (Hero):</span>
+      <div class="studio-sub-row" style="margin-bottom: 0.75rem;">
+        <button type="button" class="studio-mini-btn is-active" data-set-hero="split">Dividida + Foto 3D</button>
+        <button type="button" class="studio-mini-btn" data-set-hero="centered">Monumental Centrada</button>
+      </div>
+
+      <span class="studio-label">3. Cómo manejan los Aliases de Pago:</span>
+      <div class="studio-sub-row">
+        <button type="button" class="studio-mini-btn is-active" data-set-alias-mode="dual">2 Aliases (1 por Barbero)</button>
+        <button type="button" class="studio-mini-btn" data-set-alias-mode="single">1 Alias Único del Local</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- TOAST NOTIFICATION (COPIADO DE ALIAS / CONFIRMACIÓN) -->
+  <div class="toast-notification" id="toastNotification" role="status" aria-live="polite">
+    <span style="color: var(--accent); font-size: 1.2rem;">✓</span>
+    <span id="toastMessage">Alias copiado al portapapeles</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
