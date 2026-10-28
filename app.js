@@ -360,8 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `💳 *Alias agendado para el local:* ${bookingState.alias}`;
 
     showToast(`¡Turno preparado para ${clientName}! Abriendo WhatsApp...`);
-    // Demo: sin número, WhatsApp pide elegir a quién mandarlo. Poner el de turnos cuando esté.
-    const waUrl = `https://wa.me/?text=${encodeURIComponent(msg)}`;
+    const waUrl = `https://wa.me/5491167666374?text=${encodeURIComponent(msg)}`;
     window.open(waUrl, '_blank', 'noopener,noreferrer');
   });
 
