@@ -2,7 +2,7 @@
 # Cambios respecto del sitio: el mapa de Google (los artefactos no pueden embeber otros
 # sitios) se reemplaza por un croquis, y se agregan los márgenes seguros del visor.
 # Uso: python _artefacto/armar.py <salida.html> <vista-local.html>
-import io, os, sys
+import base64, io, os, re, sys
 
 base = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '')
 salida, vista = sys.argv[1], sys.argv[2]
@@ -19,7 +19,7 @@ cuerpo = cuerpo.replace('<script src="app.js"></script>', '')
 
 CROQUIS = '''<figure class="croquis">
           <p class="pizarra-titulo">El croquis</p>
-          <svg viewBox="0 0 400 300" role="img" aria-label="Croquis: el local está sobre la avenida 25 de Mayo, a 80 metros del Club Juventud Unida, que queda sobre Juan Farrell">
+          <svg viewBox="0 0 400 300" role="img" aria-label="Croquis: del Club Juventud Unida, sobre Juan Farrell, a la barbería, sobre la avenida 25 de Mayo, hay 80 metros">
             <defs>
               <marker id="punta-croquis" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                 <path d="M0 0 L10 5 L0 10 z" fill="#ffd21f" />
@@ -33,26 +33,45 @@ CROQUIS = '''<figure class="croquis">
               <text transform="translate(154 74) rotate(57.8)">AV. 25 DE MAYO</text>
               <text transform="translate(310 106) rotate(-23.96)">JUAN FARRELL</text>
             </g>
-            <path class="pizarra-pase" d="M216 172 L204 153 L142 181" fill="none" stroke="#ffd21f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 7" marker-end="url(#punta-croquis)" />
-            <g stroke="#f7f6ef" stroke-width="3" stroke-linecap="round">
-              <path d="M122 178l16 16M138 178l-16 16" />
+            <path class="pizarra-pase" d="M141 181 L204 153 L215.6 171.7" fill="none" stroke="#ffd21f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 7" marker-end="url(#punta-croquis)" />
+            <circle cx="130" cy="186" r="10" fill="#131815" stroke="#f7f6ef" stroke-width="3" />
+            <g stroke="#ffd21f" stroke-width="4" stroke-linecap="round">
+              <path d="M219 182l16 16M235 182l-16 16" />
             </g>
-            <circle cx="222" cy="182" r="10" fill="#ffd21f" stroke="#131815" stroke-width="3" />
             <g font-weight="800" font-size="16">
-              <text x="250" y="170" fill="#ffd21f">BARBERÍA DIEGO</text>
-              <text x="250" y="185" fill="#f7f6ef" font-weight="500" font-size="11.5">25 de Mayo 2987</text>
+              <text x="256" y="180" fill="#ffd21f">BARBERÍA DIEGO</text>
+              <text x="256" y="195" fill="#f7f6ef" font-weight="500" font-size="11.5">25 de Mayo 2987</text>
               <text x="118" y="218" fill="#f7f6ef" text-anchor="middle">EL CLUB</text>
               <text x="118" y="233" fill="#f7f6ef" text-anchor="middle" font-weight="500" font-size="11.5">Juventud Unida</text>
               <text x="150" y="150" fill="#ffd21f" text-anchor="middle" class="croquis-metros">80 m</text>
             </g>
           </svg>
-          <figcaption>Del local al club hay 80 metros. El croquis no está a escala: para el mapa de verdad, tocá «Abrir en Google Maps».</figcaption>
+          <figcaption>Del club a la barbería hay 80 metros. El croquis no está a escala: para el mapa de verdad, tocá «Abrir en Google Maps».</figcaption>
         </figure>'''
 
 ini = cuerpo.index('<div class="mapa">')
 fin = cuerpo.index('</div>', cuerpo.index('</iframe>', ini)) + len('</div>')
 cuerpo = cuerpo[:ini] + CROQUIS + cuerpo[fin:]
 assert 'iframe' not in cuerpo
+
+# Fotos reales en las figuritas: se toman de _fotos/ (fuera del repo, ver .gitignore),
+# así quedan solo en el artefacto. La figurita sin foto sigue con su sello "Nola".
+FOTOS = {
+    'barbero': 'El barbero cortando el pelo en el sillón',
+    'sillon': 'El sillón de la barbería',
+    'local': 'El local por dentro',
+    'corte': 'Un corte recién hecho',
+}
+for clave, alt in FOTOS.items():
+    ruta = os.path.join(base, '_fotos', clave + '.jpg')
+    if not os.path.exists(ruta):
+        continue
+    with open(ruta, 'rb') as f:
+        datos = base64.b64encode(f.read()).decode('ascii')
+    img = ' con-foto"><img src="data:image/jpeg;base64,' + datos + '" alt="' + alt + '" /></div>'
+    patron = re.compile(r'(<li class="figurita" data-figurita="%s">\s*<div class="figurita-foto)">.*?</div>' % clave, re.S)
+    cuerpo, n = patron.subn(lambda m: m.group(1) + img, cuerpo)
+    assert n == 1, clave
 
 CSS_ARTEFACTO = '''
 /* ---------- Ajustes para verla como artefacto ---------- */
