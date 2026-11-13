@@ -604,12 +604,6 @@ h2 { font-size: clamp(2.7rem, 8vw, 4.6rem); }
   border-radius: 4px;
   white-space: nowrap;
 }
-.tablero-nota {
-  padding: 0.8rem 0.5rem 0;
-  border-top: 1px solid #2b2f34;
-  font-size: 0.82rem;
-  color: #a4aab1;
-}
 
 /* ---------- Turnos ---------- */
 .turnero { display: grid; gap: 1.4rem; margin-top: 1.6rem; align-items: start; }

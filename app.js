@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ePrecio) ePrecio.textContent = precio;
 
     if (confirmar) {
-      const saludo = nombre ? `¡Hola Diego! Soy *${nombre}*. Quiero pedir un turno:` : '¡Hola Diego! Quiero pedir un turno:';
+      const saludo = nombre ? `¡Hola! Soy *${nombre}*. Quiero pedir un turno:` : '¡Hola! Quiero pedir un turno:';
       const lineas = [saludo, `✂️ ${nombreServicio} (${precio})`];
       if (dia && hora) lineas.push(`📅 ${dia} a las ${hora}`);
       confirmar.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lineas.join('\n'))}`;
