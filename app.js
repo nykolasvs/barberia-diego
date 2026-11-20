@@ -1,5 +1,5 @@
 /**
- * BARBERÍA DIEGO — "El corte del club"
+ * CLUB BARBER — "El corte del club"
  * Estado abierto/cerrado, armado del turno (la "entrada") y envío por WhatsApp.
  */
 
@@ -247,6 +247,26 @@ document.addEventListener('DOMContentLoaded', () => {
       actualizarEntrada();
       document.getElementById('turnos')?.scrollIntoView();
       mostrarAviso(`Listo: ${radio.dataset.nombre} (${radio.dataset.precio}). Elegí día y horario.`);
+    });
+  });
+
+  /* ========================================================================
+     7. PALETA DE LA MAQUETA: NEGRO Y ORO (EL ESCUDO) O CANCHA VERDE
+     ======================================================================== */
+  const paletaBotones = document.querySelectorAll('.paleta-btn');
+
+  function ponerPaleta(paleta) {
+    document.documentElement.setAttribute('data-paleta', paleta);
+    paletaBotones.forEach((boton) => {
+      boton.setAttribute('aria-pressed', boton.dataset.paleta === paleta ? 'true' : 'false');
+    });
+  }
+  ponerPaleta(document.documentElement.getAttribute('data-paleta') === 'cancha' ? 'cancha' : 'club');
+
+  paletaBotones.forEach((boton) => {
+    boton.addEventListener('click', () => {
+      ponerPaleta(boton.dataset.paleta);
+      try { localStorage.setItem('club-barber-paleta', boton.dataset.paleta); } catch (e) {}
     });
   });
 });

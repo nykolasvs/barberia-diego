@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BARBERÍA DIEGO — "El corte del club"
+   CLUB BARBER — "El corte del club"
    La página es la pared del local: pasto de cancha arriba, varilla de pino,
    azulejo blanco con junta oscura abajo y piso de granito al final.
    Un solo color de acción: amarillo tarjeta.
@@ -984,6 +984,84 @@ h2 { font-size: clamp(2.7rem, 8vw, 4.6rem); }
 }
 .aviso.visible { opacity: 1; transform: translate(-50%, 0); }
 
+/* ---------- Selector de paleta (solo de la maqueta) ---------- */
+.paletas {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.paleta-btn {
+  padding: 0.2rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: transparent;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.paleta-btn[aria-pressed="true"] { background: var(--tinta); color: var(--amarilla); }
+
+/* Los dibujos toman el amarillo de la paleta activa */
+svg [stroke="#ffd21f"] { stroke: var(--amarilla); }
+svg [fill="#ffd21f"] { fill: var(--amarilla); }
+
+/* ==========================================================================
+   PALETA "CLUB": los colores del escudo de Club Barber (negro, oro y blanco).
+   La cancha pasa a ser de noche: mismas formas, otros colores.
+   ========================================================================== */
+:root[data-paleta="club"] {
+  --cesped: #151516;
+  --cesped-oscuro: #0a0a0b;
+  --cal: #f6f0dc;
+  --junta: #0e0e10;
+  --pino: #e6bb45;
+  --pino-oscuro: #9a7215;
+  --amarilla: #e9b632;
+  --tinta: #0e0e10;
+  --tinta-suave: #4d4a43;
+  --pizarron: #0a0a0b;
+  --papel: #fffaf0;
+}
+
+/* En lugar de pasto, bastones apenas marcados */
+[data-paleta="club"] .cesped {
+  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 150px, rgba(0, 0, 0, 0.3) 150px 300px);
+  background-blend-mode: normal;
+}
+[data-paleta="club"] .cal-lineas { color: rgba(233, 182, 50, 0.2); }
+@media (min-width: 62rem) {
+  [data-paleta="club"] .cal-lineas { color: rgba(233, 182, 50, 0.5); }
+}
+[data-paleta="club"] .h1-acento { color: var(--amarilla); }
+
+[data-paleta="club"] .topbar { border-bottom: 1px solid #2a2a2d; }
+[data-paleta="club"] .cabecera,
+[data-paleta="club"] .nav { border-bottom-color: var(--amarilla); }
+[data-paleta="club"] .vallas,
+[data-paleta="club"] .borde-junta { border-top-color: var(--amarilla); }
+
+/* La varilla pasa a ser la cinta a bastones del escudo */
+[data-paleta="club"] .varilla {
+  height: 26px;
+  background: repeating-linear-gradient(90deg, var(--cal) 0 20px, var(--cesped-oscuro) 20px 40px);
+  border-top: 4px solid var(--amarilla);
+  border-bottom: 4px solid var(--amarilla);
+}
+
+[data-paleta="club"] .btn-amarilla { border-color: #f3d57c; box-shadow: 0 4px 0 #8a6610; }
+[data-paleta="club"] .btn-amarilla:hover { box-shadow: 0 6px 0 #8a6610; }
+[data-paleta="club"] .btn-amarilla:active { box-shadow: 0 1px 0 #8a6610; }
+[data-paleta="club"] .btn-tinta:hover { background: var(--amarilla); color: var(--tinta); }
+
+[data-paleta="club"] .azulejos .volanta { color: #8a6610; }
+[data-paleta="club"] .tablero { border-color: var(--amarilla); }
+
+[data-paleta="club"] .chip input:hover + span { background: #f8f0d8; }
+[data-paleta="club"] .chip input:checked + span { background: var(--cesped-oscuro); }
+[data-paleta="club"] .chip input:checked + span i { color: var(--amarilla); }
+[data-paleta="club"] .chip input:disabled + span { background: #ecebe5; }
+
 /* ---------- Menos movimiento ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -991,3 +1069,16 @@ h2 { font-size: clamp(2.7rem, 8vw, 4.6rem); }
   .pizarra-pase { animation: none; }
   .btn, .aviso, .chip span, .tablero-fila { transition: none; }
 }
+
+/* Paleta "club": el pie también va de negro y oro */
+[data-paleta="club"] .pie {
+  color: var(--cal);
+  background: var(--cesped-oscuro);
+  border-top-color: var(--amarilla);
+}
+[data-paleta="club"] .pie-nota { border-top-color: rgba(246, 240, 220, 0.25); }
+[data-paleta="club"] .pie :focus-visible { outline-color: var(--amarilla); }
+[data-paleta="club"] .pie .btn-tinta { background: var(--amarilla); color: var(--tinta); }
+[data-paleta="club"] .pie .btn-tinta:hover { background: var(--cal); }
+[data-paleta="club"] .paleta-btn { border-color: var(--cal); color: var(--cal); }
+[data-paleta="club"] .paleta-btn[aria-pressed="true"] { background: var(--amarilla); border-color: var(--amarilla); color: var(--tinta); }

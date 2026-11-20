@@ -19,7 +19,7 @@ cuerpo = cuerpo.replace('<script src="app.js"></script>', '')
 
 CROQUIS = '''<figure class="croquis">
           <p class="pizarra-titulo">El croquis</p>
-          <svg viewBox="0 0 400 300" role="img" aria-label="Croquis: del Club Juventud Unida, sobre Juan Farrell, a la barbería, sobre la avenida 25 de Mayo, hay 80 metros">
+          <svg viewBox="0 0 400 300" role="img" aria-label="Croquis: del Club Juventud Unida, sobre Juan Farrell, a Club Barber, sobre la avenida 25 de Mayo, hay 80 metros">
             <defs>
               <marker id="punta-croquis" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                 <path d="M0 0 L10 5 L0 10 z" fill="#ffd21f" />
@@ -39,14 +39,14 @@ CROQUIS = '''<figure class="croquis">
               <path d="M219 182l16 16M235 182l-16 16" />
             </g>
             <g font-weight="800" font-size="16">
-              <text x="256" y="180" fill="#ffd21f">BARBERÍA DIEGO</text>
+              <text x="256" y="180" fill="#ffd21f">CLUB BARBER</text>
               <text x="256" y="195" fill="#f7f6ef" font-weight="500" font-size="11.5">25 de Mayo 2987</text>
-              <text x="118" y="218" fill="#f7f6ef" text-anchor="middle">EL CLUB</text>
-              <text x="118" y="233" fill="#f7f6ef" text-anchor="middle" font-weight="500" font-size="11.5">Juventud Unida</text>
+              <text x="118" y="218" fill="#f7f6ef" text-anchor="middle">JUVENTUD UNIDA</text>
+              <text x="118" y="233" fill="#f7f6ef" text-anchor="middle" font-weight="500" font-size="11.5">El club del barrio</text>
               <text x="150" y="150" fill="#ffd21f" text-anchor="middle" class="croquis-metros">80 m</text>
             </g>
           </svg>
-          <figcaption>Del club a la barbería hay 80 metros. El croquis no está a escala: para el mapa de verdad, tocá «Abrir en Google Maps».</figcaption>
+          <figcaption>De Juventud Unida a Club Barber hay 80 metros. El croquis no está a escala: para el mapa de verdad, tocá «Abrir en Google Maps».</figcaption>
         </figure>'''
 
 ini = cuerpo.index('<div class="mapa">')
@@ -130,7 +130,7 @@ document.addEventListener('click', (e) => {
 });
 '''
 
-cabeza = '''<title>Maqueta Barbería Diego</title>
+cabeza = '''<title>Maqueta Club Barber</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

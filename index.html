@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Barbería Diego | El corte del club · Lanús Oeste</title>
-  <meta name="description" content="Barbería de barrio en Lanús Oeste, a 80 metros del Club Juventud Unida de Villa Giardino. Cortes para chicos y grandes, con turno por WhatsApp." />
+  <title>Club Barber | El corte del club · Lanús Oeste</title>
+  <meta name="description" content="Club Barber: barbería de barrio en Lanús Oeste, a 80 metros del Club Juventud Unida de Villa Giardino. Cortes para chicos y grandes, con turno por WhatsApp." />
   <!-- Maqueta para mostrarle a Diego: que no la indexen los buscadores -->
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="theme-color" content="#1b5725" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 46'%3E%3Cpath d='M3 3h34v21c0 12-17 19-17 19S3 36 3 24z' fill='%23f7f6ef' stroke='%2314171a' stroke-width='3'/%3E%3Cpath d='M3 3h34v10H3z' fill='%232b7733' stroke='%2314171a' stroke-width='3'/%3E%3C/svg%3E" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 46'%3E%3Cpath d='M4 3h36v20c0 12-18 20-18 20S4 35 4 23z' fill='%230a0a0b'/%3E%3Cpath d='M8 3h4v12H8zM16 3h4v12h-4zM24 3h4v12h-4zM32 3h4v12h-4z' fill='%23f6f0dc'/%3E%3Cpath d='M4 3h36v20c0 12-18 20-18 20S4 35 4 23z' fill='none' stroke='%23e9b632' stroke-width='3'/%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +17,14 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <script>
+    // Paleta de la maqueta: la del escudo (negro y oro) o la última que se eligió en el pie.
+    (function () {
+      var paleta = 'club';
+      try { paleta = localStorage.getItem('club-barber-paleta') || paleta; } catch (e) {}
+      document.documentElement.setAttribute('data-paleta', paleta === 'cancha' ? 'cancha' : 'club');
+    })();
+  </script>
 
   <a class="saltar" href="#turnos">Ir a pedir turno</a>
 
@@ -35,14 +43,26 @@
   <header class="cabecera" id="cabecera">
     <div class="wrap cabecera-in">
       <a class="marca" href="#inicio">
-        <svg class="marca-escudo" viewBox="0 0 40 46" aria-hidden="true" focusable="false">
-          <path d="M3 3h34v21c0 12-17 19-17 19S3 36 3 24z" fill="#f7f6ef" stroke="#14171a" stroke-width="2.5" />
-          <path d="M3 3h34v10H3z" fill="#ffd21f" stroke="#14171a" stroke-width="2.5" />
-          <text x="20" y="31" text-anchor="middle" font-family="Archivo, Arial Narrow, sans-serif" font-weight="900" font-size="15" fill="#14171a">BD</text>
+        <svg class="marca-escudo" viewBox="0 0 44 56" aria-hidden="true" focusable="false">
+          <g fill="#e9b632">
+            <polygon points="10.0,1.6 11.0,4.2 13.8,4.4 11.6,6.1 12.4,8.8 10.0,7.3 7.6,8.8 8.4,6.1 6.2,4.4 9.0,4.2" />
+            <polygon points="22.0,0.0 23.2,3.3 26.8,3.5 24.0,5.6 24.9,9.0 22.0,7.1 19.1,9.0 20.0,5.6 17.2,3.5 20.8,3.3" />
+            <polygon points="34.0,1.6 35.0,4.2 37.8,4.4 35.6,6.1 36.4,8.8 34.0,7.3 31.6,8.8 32.4,6.1 30.2,4.4 33.0,4.2" />
+          </g>
+          <path d="M4 13h36v20c0 12-18 20-18 20S4 45 4 33z" fill="#0a0a0b" />
+          <g fill="#f6f0dc">
+            <rect x="8" y="13" width="4" height="12" />
+            <rect x="16" y="13" width="4" height="12" />
+            <rect x="24" y="13" width="4" height="12" />
+            <rect x="32" y="13" width="4" height="12" />
+          </g>
+          <path d="M4 25h36" stroke="#e9b632" stroke-width="2" />
+          <path d="M4 13h36v20c0 12-18 20-18 20S4 45 4 33z" fill="none" stroke="#e9b632" stroke-width="2.5" stroke-linejoin="round" />
+          <text x="22" y="40" text-anchor="middle" font-family="Archivo, Arial Narrow, sans-serif" font-weight="900" font-size="12" fill="#f6f0dc">CB</text>
         </svg>
         <span class="marca-texto">
-          <span class="marca-nombre">Barbería Diego</span>
-          <span class="marca-bajada">Para la gente del club</span>
+          <span class="marca-nombre">Club Barber</span>
+          <span class="marca-bajada">Barbería · Lanús Oeste</span>
         </span>
       </a>
 
@@ -75,7 +95,7 @@
       <div class="wrap hero-grid">
         <div class="hero-texto">
           <p class="volanta">Lanús Oeste · a 80 metros del Club Juventud Unida</p>
-          <h1>El corte<br />del club.</h1>
+          <h1>El corte<br /><span class="h1-acento">del club.</span></h1>
           <p class="hero-bajada">
             Cortes para los chicos que juegan en el club, para los padres que los llevan
             y para los que alientan desde el alambrado. Sin apuro y con charla de tribuna.
@@ -239,7 +259,7 @@
 
         <div class="tablero">
           <div class="tablero-cabeza">
-            <span>Local: Barbería Diego</span>
+            <span>Local: Club Barber</span>
             <span>Temporada 2026</span>
           </div>
           <ul class="tablero-lista">
@@ -347,7 +367,7 @@
             <div class="entrada-cuerpo">
               <div class="entrada-cabeza">
                 <span class="entrada-sello">Entrada</span>
-                <span class="entrada-lugar">Barbería Diego · Sillón 1</span>
+                <span class="entrada-lugar">Club Barber · Sillón 1</span>
               </div>
               <dl class="entrada-datos" aria-live="polite">
                 <div><dt>Servicio</dt><dd id="eServicio">Corte</dd></div>
@@ -452,7 +472,7 @@
 
         <div class="mapa">
           <iframe
-            title="Ubicación de Barbería Diego en Google Maps"
+            title="Ubicación de Club Barber en Google Maps"
             src="https://www.google.com/maps?q=Av.%2025%20de%20Mayo%202987%2C%20Lan%C3%BAs%20Oeste%2C%20Buenos%20Aires&amp;z=17&amp;output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
@@ -466,14 +486,19 @@
   <footer class="pie">
     <div class="wrap pie-in">
       <div class="pie-marca">
-        <span class="marca-nombre">Barbería Diego</span>
+        <span class="marca-nombre">Club Barber</span>
         <span>Av. 25 de Mayo 2987, Lanús Oeste · WhatsApp 11 6766-6374</span>
       </div>
       <a class="btn btn-tinta btn-chico" href="#turnos">Pedir turno</a>
     </div>
     <div class="wrap pie-nota">
       <span>Esto es una maqueta: un diseño de entrada para charlar la idea. Precios, horarios y fotos son de ejemplo.</span>
-      <span>© 2026 Barbería Diego</span>
+      <div class="paletas" role="group" aria-label="Paleta de colores de la maqueta">
+        <span>Paleta:</span>
+        <button type="button" class="paleta-btn" id="paleta-club" data-paleta="club" aria-pressed="true">Negro y oro</button>
+        <button type="button" class="paleta-btn" id="paleta-cancha" data-paleta="cancha" aria-pressed="false">Cancha verde</button>
+      </div>
+      <span>© 2026 Club Barber</span>
     </div>
   </footer>
 
